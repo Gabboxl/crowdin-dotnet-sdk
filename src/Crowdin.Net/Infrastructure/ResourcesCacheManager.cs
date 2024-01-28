@@ -9,7 +9,7 @@ namespace Crowdin.Net.Infrastructure
 {
     internal static class ResourcesCacheManager
     {
-        private static readonly string RootPath = Path.Combine(FileSystem.CacheDirectory, "crowdin");
+        private static readonly string RootPath = Path.Combine(Path.GetTempPath(), "crowdin");
         
         internal static bool IsCacheUpToDate(string filename, DateTimeOffset dateToCompare)
         {

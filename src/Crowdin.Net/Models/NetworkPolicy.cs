@@ -7,8 +7,7 @@ namespace Crowdin.Net.Models
     public enum NetworkPolicy
     {
         All,
-        OnlyWiFi,
-        OnlyCellular,
+     //   OnlyMetered,
         Forbidden
     }
 }

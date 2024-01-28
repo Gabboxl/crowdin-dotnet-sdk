@@ -16,18 +16,18 @@ namespace Crowdin.Net
     [PublicAPI]
     public static class DynamicResourcesLoader
     {
-        private static CultureInfo? mCustomCulture;
+        private static CultureInfo? _mCustomCulture;
         private static readonly CultureInfo DefaultCulture = CultureInfo.CurrentUICulture;
         
         public static CultureInfo CurrentCulture
         {
-            get => mCustomCulture ?? DefaultCulture;
-            set => mCustomCulture = value;
+            get => _mCustomCulture ?? DefaultCulture;
+            set => _mCustomCulture = value;
         }
         
         public static CrowdinOptions GlobalOptions { get; set; } = new();
         
-        public static void LoadStaticStrings(ResourceManager resourceManager, ResourceDictionary dictionary)
+        public static void LoadStaticStrings(ResourceManager resourceManager, IDictionary dictionary)
         {
             ResourceSet? resourceSet = resourceManager.GetResourceSet(CurrentCulture, true, true);
             
@@ -41,7 +41,7 @@ namespace Crowdin.Net
             }
         }
         
-        public static Task LoadCrowdinStrings(string filename, ResourceDictionary destinationResources)
+        public static Task LoadCrowdinStrings(string filename, IDictionary destinationResources)
         {
             var options = (CrowdinOptions) GlobalOptions.Clone();
             options.FileName = filename;
@@ -66,7 +66,7 @@ namespace Crowdin.Net
          *    3) Check Cache.UpdatedAt == Manifest.Timestamp -> return
          *    4) Update resources
          */
-        public static async Task LoadCrowdinStrings(CrowdinOptions options, ResourceDictionary destinationResources)
+        public static async Task LoadCrowdinStrings(CrowdinOptions options, IDictionary destinationResources)
         {
             try
             {
@@ -148,10 +148,7 @@ namespace Crowdin.Net
                             await СrowdinClient.GetFileTranslations(
                                 options.FileName, CurrentCulture.TwoLetterISOLanguageName);
                         
-                        MainThread.BeginInvokeOnMainThread(() =>
-                        {
-                            CopyResources(newResources, destinationResources);
-                        });
+                        CopyResources(newResources, destinationResources);
                         
                         ResourcesCacheManager.SaveToCache(options.FileName, newResources);
                     }
@@ -167,7 +164,7 @@ namespace Crowdin.Net
             }
         }
         
-        private static void CopyResources(IDictionary<string, string> source, ResourceDictionary destination)
+        private static void CopyResources(IDictionary<string, string> source, IDictionary destination)
         {
             foreach (KeyValuePair<string,string> kvp in source)
             {
@@ -181,14 +178,10 @@ namespace Crowdin.Net
             {
                 NetworkPolicy.All => true,
                 NetworkPolicy.Forbidden => false,
-                
-                NetworkPolicy.OnlyWiFi =>
-                    Connectivity.ConnectionProfiles
-                        .Any(profile => profile is ConnectionProfile.WiFi),
-                
-                NetworkPolicy.OnlyCellular =>
-                    Connectivity.ConnectionProfiles
-                        .Any(profile => profile is ConnectionProfile.Cellular),
+
+                //NetworkPolicy.OnlyMetered =>
+                //    Connectivity.ConnectionProfiles
+                //        .Any(profile => profile is ConnectionProfile.WiFi),
                 
                 _ => throw new ArgumentOutOfRangeException(nameof(policy), policy, null)
             };
