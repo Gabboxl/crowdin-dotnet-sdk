@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0"?>
-<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
         <id>Crowdin.Net.Sdk</id>
         <version>0.1.0</version>
@@ -7,8 +7,8 @@
         <authors>Gabboxl,Crowdin</authors>
         <owners>Gabboxl</owners>
         <license type="expression">MIT</license>
-        <projectUrl>https://github.com/crowdin/xamarin-sdk</projectUrl>
-        <repository type="git" url="https://github.com/crowdin/xamarin-sdk"/>
+        <projectUrl>https://github.com/Gabboxl/crowdin-dotnet-sdk</projectUrl>
+        <repository type="git" url="https://github.com/Gabboxl/crowdin-dotnet-sdk"/>
         <iconUrl>https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>.NET SDK for integration with Crowdin Distributions CDN</description>
