@@ -1,7 +1,5 @@
 ﻿
-using Xamarin.Essentials;
-
-namespace Crowdin.Xamarin.Forms.Infrastructure
+namespace Crowdin.Net.Infrastructure
 {
     internal static class SystemHelpers
     {

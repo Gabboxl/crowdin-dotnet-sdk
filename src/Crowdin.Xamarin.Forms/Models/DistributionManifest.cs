@@ -1,11 +1,10 @@
 ﻿
 using System;
 using System.Text.Json.Serialization;
-
+using Crowdin.Net.Infrastructure;
 using JetBrains.Annotations;
-using Crowdin.Xamarin.Forms.Infrastructure;
 
-namespace Crowdin.Xamarin.Forms.Models
+namespace Crowdin.Net.Models
 {
     [PublicAPI]
     public class DistributionManifest

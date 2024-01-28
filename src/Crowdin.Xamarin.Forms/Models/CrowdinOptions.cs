@@ -2,7 +2,7 @@
 using System;
 using JetBrains.Annotations;
 
-namespace Crowdin.Xamarin.Forms.Models
+namespace Crowdin.Net.Models
 {
     [PublicAPI]
     public class CrowdinOptions : ICloneable

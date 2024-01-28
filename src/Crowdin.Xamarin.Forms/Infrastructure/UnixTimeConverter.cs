@@ -3,7 +3,7 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Crowdin.Xamarin.Forms.Infrastructure
+namespace Crowdin.Net.Infrastructure
 {
     internal class UnixTimeConverter : JsonConverter<DateTimeOffset>
     {

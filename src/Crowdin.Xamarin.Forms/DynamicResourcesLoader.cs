@@ -3,20 +3,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Resources;
 using System.Threading.Tasks;
-
+using Crowdin.Net.Infrastructure;
+using Crowdin.Net.Models;
 using JetBrains.Annotations;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-
-using Crowdin.Xamarin.Forms.Infrastructure;
-using Crowdin.Xamarin.Forms.Models;
 
 #nullable enable
 
-namespace Crowdin.Xamarin.Forms
+namespace Crowdin.Net
 {
     [PublicAPI]
     public static class DynamicResourcesLoader
@@ -135,15 +130,12 @@ namespace Crowdin.Xamarin.Forms
                 #region 5.1 - Network denied -> no check after cache copy
                 
                 if (!useNetwork) return;
-                
+
                 #endregion
-                
+
                 #region 5.2 - Network allowed -> update cache asynchronously
-                
-#pragma warning disable CS4014
-                Task.Run(async () =>
-#pragma warning restore CS4014
-                {
+
+                Task.Run(async () => {
                     await СrowdinClient.Init(options.DistributionHash);
                     if (!СrowdinClient.IsInitialized) return;
                     

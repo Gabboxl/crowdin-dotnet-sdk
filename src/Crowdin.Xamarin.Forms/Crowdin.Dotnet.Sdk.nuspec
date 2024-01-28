@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0"?>
 <package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-        <id>Crowdin.Xamarin.Forms</id>
+        <id>Crowdin.Dotnet.Sdk</id>
         <version>0.1.0</version>
-        <title>Crowdin Xamarin Forms SDK</title>
+        <title>Crowdin .NET SDK</title>
         <authors>Crowdin</authors>
         <owners>Crowdin</owners>
         <license type="expression">MIT</license>
@@ -11,10 +11,10 @@
         <repository type="git" url="https://github.com/crowdin/xamarin-sdk"/>
         <iconUrl>https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Xamarin Forms SDK for integration with Crowdin Distributions CDN</description>
+        <description>.NET SDK for integration with Crowdin Distributions CDN</description>
         <copyright>Copyright 2022 Crowdin</copyright>
-        <tags>crowdin xamarin sdk</tags>
-        <summary>The Crowdin Xamarin Forms SDK is a lightweight interface to the Crowdin Distributions CDN</summary>
+        <tags>crowdin dotnet sdk</tags>
+        <summary>The Crowdin .NET SDK is a lightweight interface to the Crowdin Distributions CDN</summary>
     </metadata>
     <files>
         <file src="../../README.md" target="" />

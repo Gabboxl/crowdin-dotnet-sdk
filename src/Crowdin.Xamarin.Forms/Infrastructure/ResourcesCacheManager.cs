@@ -2,11 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Xamarin.Essentials;
 
 #nullable enable
 
-namespace Crowdin.Xamarin.Forms.Infrastructure
+namespace Crowdin.Net.Infrastructure
 {
     internal static class ResourcesCacheManager
     {

@@ -7,16 +7,14 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
-
+using Crowdin.Net.Infrastructure;
+using Crowdin.Net.Models;
 using JetBrains.Annotations;
 using Resx.Resources;
 
-using Crowdin.Xamarin.Forms.Infrastructure;
-using Crowdin.Xamarin.Forms.Models;
-
 #nullable enable
 
-namespace Crowdin.Xamarin.Forms
+namespace Crowdin.Net
 {
     [PublicAPI]
     public static class СrowdinClient
