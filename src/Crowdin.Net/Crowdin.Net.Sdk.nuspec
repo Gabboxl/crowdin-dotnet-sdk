@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-        <id>Crowdin.Dotnet.Sdk</id>
+        <id>Crowdin.Net.Sdk</id>
         <version>0.1.0</version>
         <title>Crowdin .NET SDK</title>
         <authors>Crowdin</authors>
