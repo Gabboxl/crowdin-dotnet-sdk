@@ -4,8 +4,8 @@
         <id>Crowdin.Net.Sdk</id>
         <version>0.1.0</version>
         <title>Crowdin .NET SDK</title>
-        <authors>Crowdin</authors>
-        <owners>Crowdin</owners>
+        <authors>Gabboxl,Crowdin</authors>
+        <owners>Gabboxl</owners>
         <license type="expression">MIT</license>
         <projectUrl>https://github.com/crowdin/xamarin-sdk</projectUrl>
         <repository type="git" url="https://github.com/crowdin/xamarin-sdk"/>
