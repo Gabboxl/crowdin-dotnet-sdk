@@ -33,19 +33,18 @@ namespace Crowdin.Net
             
             foreach (DictionaryEntry entry in resourceSet)
             {
-                if (entry.Key is string keyString &&
-                    entry.Value is string valueString)
+                if (entry is {Key: string keyString, Value: string valueString})
                 {
                     dictionary[keyString] = valueString;
                 }
             }
         }
         
-        public static Task LoadCrowdinStrings(string filename, IDictionary destinationResources)
+        public static Task LoadCrowdinStrings(string filename, IDictionary destinationResources, bool replaceExistingKeys = true)
         {
             var options = (CrowdinOptions) GlobalOptions.Clone();
             options.FileName = filename;
-            return LoadCrowdinStrings(options, destinationResources);
+            return LoadCrowdinStrings(options, destinationResources, replaceExistingKeys);
         }
         
         /* Flow
@@ -66,7 +65,7 @@ namespace Crowdin.Net
          *    3) Check Cache.UpdatedAt == Manifest.Timestamp -> return
          *    4) Update resources
          */
-        public static async Task LoadCrowdinStrings(CrowdinOptions options, IDictionary destinationResources)
+        public static async Task LoadCrowdinStrings(CrowdinOptions options, IDictionary destinationResources, bool replaceExistingKeys)
         {
             try
             {
@@ -90,7 +89,7 @@ namespace Crowdin.Net
                         await СrowdinClient.GetFileTranslations(
                             options.FileName, CurrentCulture.TwoLetterISOLanguageName);
                     
-                    CopyResources(translations, destinationResources);
+                    CopyResources(translations, destinationResources, replaceExistingKeys);
                     return;
                 }
                 
@@ -115,7 +114,7 @@ namespace Crowdin.Net
                         await СrowdinClient.GetFileTranslations(
                             options.FileName, CurrentCulture.TwoLetterISOLanguageName);
                     
-                    CopyResources(translations, destinationResources);
+                    CopyResources(translations, destinationResources, replaceExistingKeys);
                     ResourcesCacheManager.SaveToCache(options.FileName, translations);
                     
                     return;
@@ -125,7 +124,7 @@ namespace Crowdin.Net
                 
                 #region 5 - Cache enabled, file found
                 
-                CopyResources(translations, destinationResources);
+                CopyResources(translations, destinationResources, replaceExistingKeys);
                 
                 #region 5.1 - Network denied -> no check after cache copy
                 
@@ -148,7 +147,7 @@ namespace Crowdin.Net
                             await СrowdinClient.GetFileTranslations(
                                 options.FileName, CurrentCulture.TwoLetterISOLanguageName);
                         
-                        CopyResources(newResources, destinationResources);
+                        CopyResources(newResources, destinationResources, replaceExistingKeys);
                         
                         ResourcesCacheManager.SaveToCache(options.FileName, newResources);
                     }
@@ -164,11 +163,14 @@ namespace Crowdin.Net
             }
         }
         
-        private static void CopyResources(IDictionary<string, string> source, IDictionary destination)
+        private static void CopyResources(IDictionary<string, string> source, IDictionary destination, bool replaceExistingKeys)
         {
             foreach (KeyValuePair<string,string> kvp in source)
             {
-                destination[kvp.Key] = kvp.Value;
+                if (replaceExistingKeys && destination.Contains(kvp.Key))
+                    destination[kvp.Key] = kvp.Value;
+                else
+                    destination.Add(kvp.Key, kvp.Value);
             }
         }
         
