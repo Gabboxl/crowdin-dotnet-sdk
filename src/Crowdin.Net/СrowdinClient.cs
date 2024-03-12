@@ -64,11 +64,9 @@ namespace Crowdin.Net
             }
             
             if (!crowdinResFilePath.StartsWith("/"))
-            {
                 crowdinResFilePath = $"/{crowdinResFilePath}";
-            }
             
-            var url = $"{_mBaseUrl}/content/{crowdinResFilePath}";
+            var url = $"{_mBaseUrl}/content{crowdinResFilePath}";
             HttpResponseMessage response = await HttpClient.GetAsync(url);
             
             using Stream rawResponseStream = await response.Content.ReadAsStreamAsync();
