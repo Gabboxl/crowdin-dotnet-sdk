@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -10,7 +9,6 @@ using System.Threading.Tasks;
 using Crowdin.Net.Infrastructure;
 using Crowdin.Net.Models;
 using JetBrains.Annotations;
-using Resx.Resources;
 
 #nullable enable
 
@@ -77,7 +75,7 @@ namespace Crowdin.Net
             using Stream rawResponseStream = await response.Content.ReadAsStreamAsync();
             Stream decompressedStream = await DecompressStream(rawResponseStream);
             
-            using var resxReader = new ResXResourceReader(decompressedStream);
+            using var resxReader = new System.Resources.NetStandard.ResXResourceReader(decompressedStream);
             return resxReader
                 .Cast<DictionaryEntry>()
                 .ToDictionary(entry => entry.Key.ToString(), entry => entry.Value.ToString());
