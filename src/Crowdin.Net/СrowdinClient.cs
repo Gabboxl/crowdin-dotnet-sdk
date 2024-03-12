@@ -55,21 +55,20 @@ namespace Crowdin.Net
             return await JsonSerializer.DeserializeAsync<DistributionManifest>(responseStream, SerializerOptions);
         }
         
-        public static async Task<IDictionary<string, string>> GetFileTranslations(string inFilename, string languageCode)
+        public static async Task<IDictionary<string, string>> GetFileTranslations(string crowdinResFilePath)
         {
             if (Manifest is null ||
-                !SystemHelpers.IsNetworkConnected() ||
-                Manifest.Languages.All(code => code != languageCode))
+                !SystemHelpers.IsNetworkConnected()) // || Manifest.Languages.All(code => code != languageCode)
             {
                 return EmptyDictionary;
             }
             
-            if (!inFilename.StartsWith("/"))
+            if (!crowdinResFilePath.StartsWith("/"))
             {
-                inFilename = $"/{inFilename}";
+                crowdinResFilePath = $"/{crowdinResFilePath}";
             }
             
-            var url = $"{_mBaseUrl}/content/{languageCode}{inFilename}";
+            var url = $"{_mBaseUrl}/content/{crowdinResFilePath}";
             HttpResponseMessage response = await HttpClient.GetAsync(url);
             
             using Stream rawResponseStream = await response.Content.ReadAsStreamAsync();

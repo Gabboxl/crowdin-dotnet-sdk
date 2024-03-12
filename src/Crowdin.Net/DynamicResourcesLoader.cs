@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -85,9 +84,7 @@ namespace Crowdin.Net
                 {
                     await СrowdinClient.Init(options.DistributionHash);
                     
-                    translations =
-                        await СrowdinClient.GetFileTranslations(
-                            options.FileName, CurrentCulture.TwoLetterISOLanguageName);
+                    translations = await СrowdinClient.GetFileTranslations(options.FileName);
                     
                     CopyResources(translations, destinationResources, replaceExistingKeys);
                     return;
@@ -110,9 +107,7 @@ namespace Crowdin.Net
                 {
                     await СrowdinClient.Init(options.DistributionHash);
                     
-                    translations =
-                        await СrowdinClient.GetFileTranslations(
-                            options.FileName, CurrentCulture.TwoLetterISOLanguageName);
+                    translations = await СrowdinClient.GetFileTranslations(options.FileName);
                     
                     CopyResources(translations, destinationResources, replaceExistingKeys);
                     ResourcesCacheManager.SaveToCache(options.FileName, translations);
@@ -143,9 +138,7 @@ namespace Crowdin.Net
                     
                     if (!isCacheUpToDate)
                     {
-                        IDictionary<string, string> newResources =
-                            await СrowdinClient.GetFileTranslations(
-                                options.FileName, CurrentCulture.TwoLetterISOLanguageName);
+                        IDictionary<string, string> newResources = await СrowdinClient.GetFileTranslations(options.FileName);
                         
                         CopyResources(newResources, destinationResources, replaceExistingKeys);
                         
