@@ -5,8 +5,8 @@ namespace Crowdin.Net.Models
     [PublicAPI]
     public enum NetworkPolicy
     {
-        All,
+        ALL,
      //   OnlyMetered,
-        Forbidden
+        FORBIDDEN
     }
 }

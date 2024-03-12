@@ -12,7 +12,7 @@ namespace Crowdin.Net.Models
         
         public bool UseCache { get; set; } = true;
         
-        public NetworkPolicy NetworkPolicy { get; set; } = NetworkPolicy.All;
+        public NetworkPolicy NetworkPolicy { get; set; } = NetworkPolicy.ALL;
         
         public object Clone()
         {

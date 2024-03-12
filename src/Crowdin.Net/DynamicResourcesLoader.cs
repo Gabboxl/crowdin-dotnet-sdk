@@ -178,8 +178,8 @@ namespace Crowdin.Net
         {
             return policy switch
             {
-                NetworkPolicy.All => true,
-                NetworkPolicy.Forbidden => false,
+                NetworkPolicy.ALL => true,
+                NetworkPolicy.FORBIDDEN => false,
 
                 //NetworkPolicy.OnlyMetered =>
                 //    Connectivity.ConnectionProfiles
