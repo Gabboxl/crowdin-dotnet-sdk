@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
         <id>Crowdin.Net.Sdk</id>
-        <version>0.1.0</version>
+        <version>1.0.0</version>
         <title>Crowdin .NET SDK</title>
         <authors>Gabboxl,Crowdin</authors>
         <owners>Gabboxl</owners>
@@ -13,7 +13,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>.NET SDK for integration with Crowdin Distributions CDN</description>
         <copyright>Copyright 2022 Crowdin</copyright>
-        <tags>crowdin dotnet sdk</tags>
+        <tags>crowdin dotnet net netstandard netcore netframework sdk</tags>
         <summary>The Crowdin .NET SDK is a lightweight interface to the Crowdin Distributions CDN</summary>
     </metadata>
     <files>
