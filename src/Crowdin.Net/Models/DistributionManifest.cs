@@ -17,5 +17,8 @@ namespace Crowdin.Net.Models
         [JsonPropertyName("timestamp")]
         [JsonConverter(typeof(UnixTimeConverter))]
         public DateTimeOffset Timestamp { get; set; }
+
+        [JsonPropertyName("mapping")]
+        public string[] Mapping { get; set; }
     }
 }
