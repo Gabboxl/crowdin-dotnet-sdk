@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Text.Json.Serialization;
 using Crowdin.Net.Infrastructure;
 using JetBrains.Annotations;

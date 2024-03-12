@@ -21,7 +21,7 @@ namespace Crowdin.Net
         
         public static DistributionManifest? Manifest { get; private set; }
         
-        private static string mBaseUrl = null!;
+        private static string _mBaseUrl = null!;
         
         private static readonly HttpClient HttpClient = new();
         private static readonly Dictionary<string, string> EmptyDictionary = new();
@@ -36,7 +36,7 @@ namespace Crowdin.Net
         public static async Task Init(string distributionHash)
         {
             if (IsInitialized) return;
-            mBaseUrl = $"https://distributions.crowdin.net/{distributionHash}";
+            _mBaseUrl = $"https://distributions.crowdin.net/{distributionHash}";
             
             Manifest = await GetManifest();
             if (Manifest != null)
@@ -49,7 +49,7 @@ namespace Crowdin.Net
         {
             if (!SystemHelpers.IsNetworkConnected()) return null;
             
-            HttpResponseMessage response = await HttpClient.GetAsync($"{mBaseUrl}/manifest.json");
+            HttpResponseMessage response = await HttpClient.GetAsync($"{_mBaseUrl}/manifest.json");
             Stream responseStream = await response.Content.ReadAsStreamAsync();
             
             return await JsonSerializer.DeserializeAsync<DistributionManifest>(responseStream, SerializerOptions);
@@ -69,7 +69,7 @@ namespace Crowdin.Net
                 inFilename = $"/{inFilename}";
             }
             
-            var url = $"{mBaseUrl}/content/{languageCode}{inFilename}";
+            var url = $"{_mBaseUrl}/content/{languageCode}{inFilename}";
             HttpResponseMessage response = await HttpClient.GetAsync(url);
             
             using Stream rawResponseStream = await response.Content.ReadAsStreamAsync();

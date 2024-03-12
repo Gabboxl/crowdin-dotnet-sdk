@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using JetBrains.Annotations;
 
 namespace Crowdin.Net.Models
