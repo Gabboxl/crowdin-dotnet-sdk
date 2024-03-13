@@ -1,15 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <Version>1.1.0</Version>
-        <LangVersion>9.0</LangVersion>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    </PropertyGroup>
+  <PropertyGroup>
+    <Version>1.1.0</Version>
+    <LangVersion>9.0</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>$(Authors)</Company>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <Description>.NET SDK for integration with Crowdin Distributions CDN</Description>
+    <Authors>Gabboxl</Authors>
+    <Title>Crowdin .NET SDK</Title>
+    <PackageTags>crowdin dotnet net netstandard netcore netframework sdk</PackageTags>
+    <RepositoryUrl>https://github.com/Gabboxl/crowdin-net-sdk</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Gabboxl/crowdin-net-sdk</PackageProjectUrl>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
-        <PackageReference Include="ResXResourceReader.NetStandard" Version="1.3.0" />
-        <PackageReference Include="System.Text.Json" Version="8.0.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+    <PackageReference Include="ResXResourceReader.NetStandard" Version="1.3.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+  </ItemGroup>
 </Project>
