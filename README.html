@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Crowdin Xamarin Forms SDK  | Docs </title>
+    <title>Crowdin .NET SDK | Docs </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Crowdin Xamarin Forms SDK  | Docs ">
+    <meta name="title" content="Crowdin .NET SDK | Docs ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -78,48 +78,41 @@
     <img width="150" height="150" width="" src="[https://support.crowdin.com/assets/logos/symbol/png/crowdin-symbol-cDark.png](https://crowdin.com)">
   </source></source></picture>
 </p>
-<h1 id="crowdin-xamarin-forms-sdk-">Crowdin Xamarin Forms SDK <a href="https://github.com/crowdin/xamarin-sdk"><img src="https://img.shields.io/badge/beta-yellow"></a></h1>
-<p>The Crowdin Xamarin Forms SDK delivers all new translations from Crowdin project to the application immediately. So there is no need to update the application via Store to get the new version with the localization.</p>
+<h1 id="crowdin-net-sdk">Crowdin .NET SDK</h1>
+<p>Unofficial fork of <a href="https://github.com/crowdin/xamarin-sdk">https://github.com/crowdin/xamarin-sdk</a> that targets <em>.NET Standard 2.0</em> and has a more generic working logic.</p>
 <div align="center">
-<p><a href="https://github.com/crowdin/xamarin-sdk/tree/main/examples/TestMobileApp"><strong><code>Example project</code></strong></a>  | 
-<a href="https://crowdin.github.io/xamarin-sdk/api/Crowdin.Xamarin.Forms.html"><strong><code>Online Docs</code></strong></a>  | 
-<a href="https://support.crowdin.com/content-delivery"><strong><code>Crowdin Docs</code></strong></a>   | 
-<a href="https://support.crowdin.com/enterprise/content-delivery/"><strong><code>Crowdin Enterprise Docs</code></strong></a></p>
-<p><a href="https://www.nuget.org/packages/Crowdin.Xamarin.Forms/"><img src="https://img.shields.io/nuget/v/Crowdin.Xamarin.Forms?cacheSeconds=5000&amp;logo=nuget" alt="Nuget"></a>
-<a href="https://www.nuget.org/packages/Crowdin.Xamarin.Forms/"><img src="https://img.shields.io/nuget/dt/Crowdin.Xamarin.Forms?cacheSeconds=800&amp;logo=nuget" alt="Nuget"></a>
-<img src="https://img.shields.io/github/actions/workflow/status/crowdin/xamarin-sdk/basic.yml?logo=github&amp;branch=main" alt="GitHub Workflow Status">
-<a href="https://github.com/crowdin/xamarin-sdk/issues"><img src="https://img.shields.io/github/issues/crowdin/xamarin-sdk?cacheSeconds=9000" alt="GitHub issues"></a>
-<a href="https://github.com/crowdin/xamarin-sdk/graphs/contributors"><img src="https://img.shields.io/github/contributors/crowdin/xamarin-sdk?cacheSeconds=9000" alt="GitHub contributors"></a>
-<a href="https://github.com/crowdin/xamarin-sdk/blob/master/LICENSE"><img src="https://img.shields.io/github/license/crowdin/xamarin-sdk?cacheSeconds=20000" alt="GitHub"></a></p>
+  
+[![Nuget](https://img.shields.io/nuget/v/Crowdin.Xamarin.Forms?cacheSeconds=5000&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
+[![Nuget](https://img.shields.io/nuget/dt/Crowdin.Xamarin.Forms?cacheSeconds=800&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
+[![GitHub](https://img.shields.io/github/license/crowdin/xamarin-sdk?cacheSeconds=20000)](https://github.com/crowdin/xamarin-sdk/blob/master/LICENSE)
 </div>
 <h3 id="features">Features</h3>
 <ul>
 <li>Load remote strings from Crowdin Over-The-Air Content Delivery Network</li>
 <li>Built-in translations caching mechanism (enabled by default, can be disabled)</li>
 <li>Network usage configuration (All, only Wi-Fi or Cellular, Forbidden)</li>
-<li>Load static strings from the bundled RESX files (usable as fallback before the CDN strings loaded)</li>
+<li>Load static strings from the bundled RESX/RESW files (usable as fallback before the CDN strings loaded)</li>
 </ul>
 <h3 id="requirements">Requirements</h3>
 <ul>
-<li>.NET Standard 2.1 support</li>
-<li>Xamarin Forms 5.0 or newer</li>
+<li>.NET Standard 2.0 support</li>
 </ul>
 <h3 id="installation">Installation</h3>
 <p>Install via NuGet:</p>
 <pre><code>// Package Manager
-Install-Package Crowdin.Xamarin.Forms -Version 0.1.0
+Install-Package Crowdin.Net -Version 1.0.0
 
 // .Net CLI
-dotnet add package Crowdin.Xamarin.Forms --version 0.1.0
+dotnet add package Crowdin.Net --version 1.0.0
 
 // Package Reference
-&lt;PackageReference Include=&quot;Crowdin.Xamarin.Forms&quot; Version=&quot;0.1.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Crowdin.Net&quot; Version=&quot;1.0.0&quot; /&gt;
 
 // Paket CLI
-paket add Crowdin.Xamarin.Forms --version 0.1.0
+paket add Crowdin.Net --version 1.0.0
 </code></pre>
 <h3 id="quick-start">Quick start</h3>
-<p>For applications using the XML resource localization files (RESX)</p>
+<p>For applications using the XML resource localization files (RESX/RESW)</p>
 <ol>
 <li><p>Add Crowdin Distribution Hash before any modules initialization:</p>
 <pre><code class="lang-C#">DynamicResourcesLoader.GlobalOptions.DistributionHash = &quot;{your_distribution_hash}&quot;;
@@ -190,22 +183,6 @@ It can be overridden by the developer if needed.</p>
 </li>
 </ol>
 <p>P.S. The network is considered unavailable even if the user has forbidden its use in the loader settings.</p>
-<h3 id="contribution">Contribution</h3>
-<p>If you want to contribute please read the <a href="CONTRIBUTING.html">Contributing</a> guidelines.</p>
-<h3 id="seeking-assistance">Seeking Assistance</h3>
-<p>If you find any problems or would like to suggest a feature, please feel free to file an issue on Github at <a href="https://github.com/crowdin/xamarin-sdk/issues">Issues Page</a>.</p>
-<p>Need help working with Crowdin Xamarin Forms SDK or have any questions?
-<a href="https://crowdin.com/contacts">Contact Customer Success Service</a>.</p>
-<h3 id="license">License</h3>
-<pre>
-The Crowdin Xamarin Forms SDK is licensed under the MIT License.
-See the LICENSE file distributed with this work for additional
-information regarding copyright ownership.
-
-Except as contained in the LICENSE file, the name(s) of the above copyright
-holders shall not be used in advertising or otherwise to promote the sale,
-use or other dealings in this Software without prior written authorization.
-</pre>
 </article>
           </div>
           
@@ -214,7 +191,7 @@ use or other dealings in this Software without prior written authorization.
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Gabboxl/crowdin-net-sdk/blob/db4d5e453898bed4f3bf84b4bad7abefa98a013d/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Gabboxl/crowdin-net-sdk/blob/79338d02cbdb8613d80503bc505b730f908051ce/README.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
