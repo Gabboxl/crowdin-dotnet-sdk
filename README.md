@@ -12,9 +12,9 @@ Unofficial fork of https://github.com/crowdin/xamarin-sdk that targets *.NET Sta
 
 <div align="center">
   
-[![Nuget](https://img.shields.io/nuget/v/Crowdin.Xamarin.Forms?cacheSeconds=5000&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
-[![Nuget](https://img.shields.io/nuget/dt/Crowdin.Xamarin.Forms?cacheSeconds=800&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
-[![GitHub](https://img.shields.io/github/license/crowdin/xamarin-sdk?cacheSeconds=20000)](https://github.com/crowdin/xamarin-sdk/blob/master/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/Crowdin.Net?cacheSeconds=5000&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
+[![Nuget](https://img.shields.io/nuget/dt/Crowdin.Net?cacheSeconds=800&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
+[![GitHub](https://img.shields.io/github/license/Gabboxl/crowdin-net-sdk?cacheSeconds=20000)](https://github.com/Gabboxl/crowdin-net-sdk/blob/master/LICENSE)
 
 </div>
 
