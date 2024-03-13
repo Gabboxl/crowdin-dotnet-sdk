@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/a/xamarin-sdk/xamarin-sdk/docs",
+  "source_base_path": "D:/a/crowdin-net-sdk/crowdin-net-sdk/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "CODE_OF_CONDUCT.html",
-          "hash": "xFWEyTWV+9fxg6wO2Ey8tSliuUdlgl4YDDf1QhEWfM4="
+          "hash": "ksBojKgFmMr5hvM4CSQGgllERLWoe/XmiabdWoFV0Rk="
         }
       },
       "is_incremental": false,
@@ -30,22 +30,19 @@
       "output": {
         ".html": {
           "relative_path": "CONTRIBUTING.html",
-          "hash": "8oSHBQ+Rq0CsA/8s1+Oe1MdzgDZ5Y3zfby4OZCWdrqc="
+          "hash": "9FtOynFDO3Qo5uup2fnz4vFPiuyEImasEoNwc8+koKM="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "../README.md",
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "dcebwzl8/NoS/ka8MbZHkxXjs4P7AQS3VWdQgK17ZkY="
+          "hash": "Xf1WY7fFqcFrFUgBgzdwzDtbWDeL22iIGvJJ5T5dAzw="
         }
       },
       "is_incremental": false,
@@ -53,11 +50,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.DynamicResourcesLoader.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.DynamicResourcesLoader.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.DynamicResourcesLoader.html",
-          "hash": "YtQfNLs6hKYTRioCr1IR954oQXwjDzk5z+sMdQGb6gQ="
+          "relative_path": "api/Crowdin.Net.DynamicResourcesLoader.html",
+          "hash": "l2pLTD1iYebLmqIIiOIJ9TYhgK5K3goQ9z1BXmlt/Lk="
         }
       },
       "is_incremental": false,
@@ -65,11 +62,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.Models.CrowdinOptions.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.Models.CrowdinOptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.Models.CrowdinOptions.html",
-          "hash": "H/gtCIqXQtee5s3oSU7EVUUelfA/c+YdJRcGgoTS9Ek="
+          "relative_path": "api/Crowdin.Net.Models.CrowdinOptions.html",
+          "hash": "XcBaX19ocenLrzeKjIi8rDxzGUTvxcSaNj1lKKE3mKg="
         }
       },
       "is_incremental": false,
@@ -77,11 +74,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.Models.DistributionManifest.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.Models.DistributionManifest.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.Models.DistributionManifest.html",
-          "hash": "536C5HN1kz2JjiLHCb1cbXIv+gBoFhQQODVdqTBWu4c="
+          "relative_path": "api/Crowdin.Net.Models.DistributionManifest.html",
+          "hash": "AqkiO0336DX3SUCyG+/eGREr6lVLWW8s/ajkydN0co4="
         }
       },
       "is_incremental": false,
@@ -89,11 +86,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.Models.NetworkPolicy.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.Models.NetworkPolicy.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.Models.NetworkPolicy.html",
-          "hash": "S0M1O/I1FPAzFLfiQ95I+LJwlUlFhXrsx+Y4M93+nis="
+          "relative_path": "api/Crowdin.Net.Models.NetworkPolicy.html",
+          "hash": "yLnPnTSjEaq/biDsPMs+r7UFy+IAnywtoWQAyZNt/VQ="
         }
       },
       "is_incremental": false,
@@ -101,11 +98,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.Models.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.Models.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.Models.html",
-          "hash": "DMtJK1jFVCKcN757m1K227X/OmUvofLkYkFiLehvChQ="
+          "relative_path": "api/Crowdin.Net.Models.html",
+          "hash": "J7LkR3D5JfZhlq1ATG6KjlvoCc9ixowPqM330j54VYg="
         }
       },
       "is_incremental": false,
@@ -113,11 +110,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.html",
-          "hash": "NqAWcC4gAVdoNrBA//6hDMgb+FfB9p1lZgaDsShDuD0="
+          "relative_path": "api/Crowdin.Net.html",
+          "hash": "KB6+UzOGwpdSqVHSIQxzcnkM26G8PeQN2BpK2CikyzU="
         }
       },
       "is_incremental": false,
@@ -125,11 +122,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/Crowdin.Xamarin.Forms.СrowdinClient.yml",
+      "source_relative_path": "obj/api/Crowdin.Net.СrowdinClient.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Crowdin.Xamarin.Forms.СrowdinClient.html",
-          "hash": "r0RYJzQKV2mwFo/8QuehkTNFjWEqGBRpRd/IsVCZx9c="
+          "relative_path": "api/Crowdin.Net.СrowdinClient.html",
+          "hash": "uQ3jSF8kN6Z9W+h95WpHcp/alzGgkTgfWX4Fl3M2OlY="
         }
       },
       "is_incremental": false,
@@ -141,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "E1IT5teDzQpuKOOMmCxSuIPmospQQrHiwE8gH8mGdog="
+          "hash": "zD1m9k+N2lWCbNXKI8dMPM3ANauzfUR1JqBy74vHNl8="
         }
       },
       "is_incremental": false,
@@ -153,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "c+YXDwQRpSDuxkYKqKtGgCsgRxky2P70HnNnSxPp320="
+          "hash": "YoyL2EkN/3RQAfgZFjjfRr+y2GBcH1taC3si1K1hlc0="
         }
       },
       "is_incremental": false,
