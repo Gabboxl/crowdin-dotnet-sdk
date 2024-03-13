@@ -6,22 +6,14 @@
   </picture>
 </p>
 
-# Crowdin Xamarin Forms SDK [<img src="https://img.shields.io/badge/beta-yellow"/>](https://github.com/crowdin/xamarin-sdk)
+# Crowdin .NET SDK
 
-The Crowdin Xamarin Forms SDK delivers all new translations from Crowdin project to the application immediately. So there is no need to update the application via Store to get the new version with the localization.
+Unofficial fork of https://github.com/crowdin/xamarin-sdk that targets *.NET Standard 2.0* and has a more generic working logic.
 
 <div align="center">
-
-[**`Example project`**](https://github.com/crowdin/xamarin-sdk/tree/main/examples/TestMobileApp) &nbsp;|&nbsp;
-[**`Online Docs`**](https://crowdin.github.io/xamarin-sdk/api/Crowdin.Xamarin.Forms.html) &nbsp;|&nbsp;
-[**`Crowdin Docs`**](https://support.crowdin.com/content-delivery)  &nbsp;|&nbsp;
-[**`Crowdin Enterprise Docs`**](https://support.crowdin.com/enterprise/content-delivery/)
-
-[![Nuget](https://img.shields.io/nuget/v/Crowdin.Xamarin.Forms?cacheSeconds=5000&logo=nuget)](https://www.nuget.org/packages/Crowdin.Xamarin.Forms/)
-[![Nuget](https://img.shields.io/nuget/dt/Crowdin.Xamarin.Forms?cacheSeconds=800&logo=nuget)](https://www.nuget.org/packages/Crowdin.Xamarin.Forms/)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/crowdin/xamarin-sdk/basic.yml?logo=github&branch=main)
-[![GitHub issues](https://img.shields.io/github/issues/crowdin/xamarin-sdk?cacheSeconds=9000)](https://github.com/crowdin/xamarin-sdk/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/crowdin/xamarin-sdk?cacheSeconds=9000)](https://github.com/crowdin/xamarin-sdk/graphs/contributors)
+  
+[![Nuget](https://img.shields.io/nuget/v/Crowdin.Xamarin.Forms?cacheSeconds=5000&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
+[![Nuget](https://img.shields.io/nuget/dt/Crowdin.Xamarin.Forms?cacheSeconds=800&logo=nuget)](https://www.nuget.org/packages/Crowdin.Net/)
 [![GitHub](https://img.shields.io/github/license/crowdin/xamarin-sdk?cacheSeconds=20000)](https://github.com/crowdin/xamarin-sdk/blob/master/LICENSE)
 
 </div>
@@ -31,13 +23,12 @@ The Crowdin Xamarin Forms SDK delivers all new translations from Crowdin project
 + Load remote strings from Crowdin Over-The-Air Content Delivery Network
 + Built-in translations caching mechanism (enabled by default, can be disabled)
 + Network usage configuration (All, only Wi-Fi or Cellular, Forbidden)
-+ Load static strings from the bundled RESX files (usable as fallback before the CDN strings loaded)
++ Load static strings from the bundled RESX/RESW files (usable as fallback before the CDN strings loaded)
 
 
 ### Requirements
 
-* .NET Standard 2.1 support
-* Xamarin Forms 5.0 or newer
+* .NET Standard 2.0 support
 
 ### Installation
 
@@ -45,21 +36,21 @@ Install via NuGet:
 
 ```
 // Package Manager
-Install-Package Crowdin.Xamarin.Forms -Version 0.1.0
+Install-Package Crowdin.Net -Version 1.0.0
 
 // .Net CLI
-dotnet add package Crowdin.Xamarin.Forms --version 0.1.0
+dotnet add package Crowdin.Net --version 1.0.0
 
 // Package Reference
-<PackageReference Include="Crowdin.Xamarin.Forms" Version="0.1.0" />
+<PackageReference Include="Crowdin.Net" Version="1.0.0" />
 
 // Paket CLI
-paket add Crowdin.Xamarin.Forms --version 0.1.0
+paket add Crowdin.Net --version 1.0.0
 ```
 
 ### Quick start
 
-For applications using the XML resource localization files (RESX)
+For applications using the XML resource localization files (RESX/RESW)
 
 1) Add Crowdin Distribution Hash before any modules initialization:
 
@@ -144,23 +135,3 @@ Every time the method `DynamicResourcesLoader.LoadCrowdinStrings` is executed th
 
 P.S. The network is considered unavailable even if the user has forbidden its use in the loader settings.
 
-### Contribution
-
-If you want to contribute please read the [Contributing](CONTRIBUTING.md) guidelines.
-
-### Seeking Assistance
-If you find any problems or would like to suggest a feature, please feel free to file an issue on Github at [Issues Page](https://github.com/crowdin/xamarin-sdk/issues).
-
-Need help working with Crowdin Xamarin Forms SDK or have any questions?
-[Contact Customer Success Service](https://crowdin.com/contacts).
-
-### License
-<pre>
-The Crowdin Xamarin Forms SDK is licensed under the MIT License.
-See the LICENSE file distributed with this work for additional
-information regarding copyright ownership.
-
-Except as contained in the LICENSE file, the name(s) of the above copyright
-holders shall not be used in advertising or otherwise to promote the sale,
-use or other dealings in this Software without prior written authorization.
-</pre>
